@@ -1,5 +1,5 @@
 import {defineConfig} from 'vite'
-import { URL, fileURLToPath, resolve } from "node:url";
+import {URL, fileURLToPath, resolve} from "node:url";
 import react from '@vitejs/plugin-react'
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -8,7 +8,9 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig({
     plugins: [react()],
     server: {
-        port: 3000
+        port: 3000,
+        open: true,
+
     },
     preview: {
         port: 8080,
