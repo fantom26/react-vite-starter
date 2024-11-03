@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import { BASIC_PATHS, ERROR_PATHS } from "@/app/config/routing/pathes.ts";
+import ErrorBoundaryLayout from "@/app/config/routing/error-boundary-layout.tsx";
 
 const routerOptions = {
   basename: "/",
@@ -24,6 +25,9 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes, routerOptions);
+const router = createBrowserRouter(
+  [{ element: <ErrorBoundaryLayout />, children: routes }],
+  routerOptions,
+);
 
 export default router;
