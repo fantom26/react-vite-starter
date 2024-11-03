@@ -25,3 +25,10 @@ Built with type safety, scalability, and developer experience in mind. A batteri
 
 This setup provides a robust foundation for developing scalable, maintainable applications while enhancing the overall
 developer experience.
+
+## Environment Variables
+
+To set up the project, create a `.env` file in the root directory based on the `.env.example` file:
+
+```bash
+cp .env.example .env
