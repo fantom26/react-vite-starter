@@ -1,33 +1,35 @@
-import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
-import { BASIC_PATHS, ERROR_PATHS } from "@/app/config/routing/pathes.ts";
+
+import { createBrowserRouter } from "react-router-dom";
+
 import ErrorBoundaryLayout from "@/app/config/routing/error-boundary-layout.tsx";
+import { BASIC_PATHS, ERROR_PATHS } from "@/app/config/routing/pathes.ts";
 
 const routerOptions = {
-  basename: "/",
+  basename: "/"
 };
 
 const routes = [
   {
     path: BASIC_PATHS.HOME,
     caseSensitive: true,
-    Component: lazy(() => import("@/pages/home")),
+    Component: lazy(() => import("@/pages/home"))
   },
   {
     path: BASIC_PATHS.ABOUT,
     caseSensitive: true,
-    Component: lazy(() => import("@/pages/about")),
+    Component: lazy(() => import("@/pages/about"))
   },
   {
     path: ERROR_PATHS.NOT_FOUND,
     caseSensitive: true,
-    Component: lazy(() => import("@/pages/not-found")),
-  },
+    Component: lazy(() => import("@/pages/not-found"))
+  }
 ];
 
 const router = createBrowserRouter(
   [{ element: <ErrorBoundaryLayout />, children: routes }],
-  routerOptions,
+  routerOptions
 );
 
 export default router;

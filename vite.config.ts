@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
-import { URL, fileURLToPath, resolve } from "node:url";
 import react from "@vitejs/plugin-react";
+import { URL, fileURLToPath, resolve } from "node:url";
+import { defineConfig } from "vite";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -9,12 +9,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true,
+    open: true
   },
   preview: {
     port: 8080,
     strictPort: true,
-    open: true,
+    open: true
   },
   build: {
     target: "modules", // https://vitejs.dev/config/build-options#build-target
@@ -22,11 +22,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 600, // https://vitejs.dev/config/build-options#build-chunksizewarninglimit
     minify: "esbuild", // https://vitejs.dev/config/build-options#build-minify
     cssMinify: "lightningcss", // https://vitejs.dev/config/build-options#build-cssminify,
-    cssCodeSplit: true, // https://vitejs.dev/config/build-options#build-csscodesplit
+    cssCodeSplit: true // https://vitejs.dev/config/build-options#build-csscodesplit
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
+      "@": resolve(__dirname, "./src")
+    }
+  }
 });

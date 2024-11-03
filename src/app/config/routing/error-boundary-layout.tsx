@@ -1,5 +1,5 @@
-import { isRouteErrorResponse, Outlet, useRouteError } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
+import { Outlet, isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 function RootBoundary() {
   const error = useRouteError();

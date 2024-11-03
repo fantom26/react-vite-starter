@@ -1,13 +1,11 @@
 {
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports"
-  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "trailingComma": "none",
   "printWidth": 80,
   "importOrder": [
     "^react(/.*)?$",
     "<THIRD_PARTY_MODULES>",
-    "^(@app|@pages|@widgets|@features|@entities|@shared)(/.*|$)",
+    "^(@/app|@/pages|@/widgets|@/features|@/entities|@/shared)(/.*|$)",
     "^[./|~/]"
   ],
   "importOrderSeparation": true,
